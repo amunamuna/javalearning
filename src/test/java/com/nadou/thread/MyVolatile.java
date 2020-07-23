@@ -1,12 +1,17 @@
 package com.nadou.thread;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  *@ClassName MyVolatile
- *@Description TODO
+ *@Description
+ * volatile用法
+ * volatile最适合使用的场景是一个线程写、其它线程读，如果有多个线程并发写操作，仍然需要使用锁或者线程安全的容器或者原子变量来代替
  *@Author amunamuna
  *@Date 2020/7/21 09:05
  *@Version 1.0
  **/
+@Slf4j
 public class MyVolatile {
 
   public static void main(String[] args) {
@@ -15,13 +20,13 @@ public class MyVolatile {
 
     while (true) { //while底层机制较高效，未重复去获取主内存flag值，除了volatile，另一种方法是加synchronized
       if (demo.isFlag()) {
-        System.out.println("main thread is break");
+        log.info("main thread is break");
         break;
       }
     }
   }
 }
-
+@Slf4j
 class ThreadDemo implements Runnable {
 
   //当flag未加上volatile时，结果：flag is true
@@ -42,7 +47,7 @@ class ThreadDemo implements Runnable {
       e.printStackTrace();
     }
     flag = true;
-    System.out.println("flag is true");
+    log.info("flag is true");
   }
 
   public boolean isFlag() {

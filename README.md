@@ -1,5 +1,7 @@
+
+```shell
 ├── serializable
-│   └── SerializableDemo.java
+│   └── SerializableDemo.java 序列化
 ├── stream
 │   ├── DistinctDemo.java
 │   ├── FilterDemo.java
@@ -11,12 +13,18 @@
 │   ├── SortedDemo.java
 │   └── Student.java
 └── thread
-    ├── MyAtomic.java   原子操作类
-    ├── MyCountDownLatch.java 倒计时锁
+    ├── MyAtomic.java 原子操作类:CAS保证原子操作,value值被volatile修饰,保证内存可见.
+    ├── MyCountDownLatch.java 倒计时锁:AQS
+    ├── MyCyclicBarrier.java 让一组线程等待至某个状态之后再全部同时执行
+    ├── MyCallable.java 使用FutureTask提交callable
+    ├── MyFutureAndCallable.java 使用ExecutorService提交callable
+    ├── MyReadWriteLock.java 读写锁
+    ├── MySemaphone.java 用來控制并发线程数
     └── MyVolatile.java volatile 能保证内存可见
 
 
 
+```
 
 # stream
 ```

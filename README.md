@@ -1,3 +1,4 @@
+# 结构目录
 
 ```shell
 ├── serializable
@@ -12,6 +13,8 @@
 │   ├── SkipDemo.java
 │   ├── SortedDemo.java
 │   └── Student.java
+├── math
+│   └── ArithmeticUtils.java 用于高精确处理常用的数学运算
 └── thread
     ├── MyAtomic.java 原子操作类:CAS保证原子操作,value值被volatile修饰,保证内存可见.
     ├── MyCountDownLatch.java 倒计时锁:AQS
@@ -47,21 +50,4 @@ Stream的原理：将要处理的元素看做一种流，流在管道中传输�
 stream() − 为集合创建串行流
 parallelStream() - 为集合创建并行流
 
-```
-
-# Serializable
-serialVersionUID https://blog.csdn.net/amunamuna/article/details/102624946
-
-# @Slf4j
-
-如果不想每次都写private final Logger logger = LoggerFactory.getLogger(当前类名.class); 可以用注解@Slf4j
-
-引入依赖：
-```
-    <!--lombok @Slf4j注解-->
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>${lombok-version}</version>
-    </dependency>
 ```

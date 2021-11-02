@@ -19,6 +19,10 @@ import org.springframework.util.CollectionUtils;
 public final class RedisUtil {
   @Autowired
   private RedisTemplate<String, Object> redisTemplate;
+
+  public void setRedisTemplate(RedisTemplate<String, Object> redisTemplate) {
+    this.redisTemplate = redisTemplate;
+  }
   // =============================common============================
 
   /**

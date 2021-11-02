@@ -25,12 +25,12 @@ public class NettyServer {
     }
 
     public void run() {
-        EventLoopGroup bossGroup = new NioEventLoopGroup();
-        EventLoopGroup workerGroup = new NioEventLoopGroup();
+        EventLoopGroup parentGroup = new NioEventLoopGroup();
+        EventLoopGroup childGroup = new NioEventLoopGroup();
         try {
             ServerBootstrap bootstrap = new ServerBootstrap();
             bootstrap
-                    .group(bossGroup, workerGroup)
+                    .group(parentGroup, childGroup)
                     .channel(NioServerSocketChannel.class)
                     // 指定连接队列大小
                     .option(ChannelOption.SO_BACKLOG, 128)

@@ -12,6 +12,10 @@ import lombok.extern.slf4j.Slf4j;
 import com.nadou.redis.utils.RedisUtil;
 import com.nadou.redis.web.entry.DemoApplication;
 
+import javax.xml.ws.Response;
+import java.util.Date;
+import java.util.UUID;
+
 
 /**
  * Created by amunamuna
@@ -37,21 +41,21 @@ public class TestRedis {
     log.info("result:"+redisUtil.get("aaa"));
   }
 
-  @Test
-  public void testObj() throws Exception {
-    Author user=new Author();
-    user.setName("Jerry");
-    user.setIntro_l("不会打篮球的程序不是好男人!");
-
-    ValueOperations<String, Author> operations=redisTemplate.opsForValue();
-    operations.set("502", user);
-    Thread.sleep(500);
-    boolean exists=redisTemplate.hasKey("502");
-    if(exists){
-      log.info(redisTemplate.opsForValue().get("502").toString());
-    }else{
-      log.info("exists is false");
-    }
-    // Assert.assertEquals("aa", operations.get("com.neo.f").getUserName());
-  }
+//  @Test
+//  public void testObj() throws Exception {
+//    Author user=new Author();
+//    user.setName("Jerry");
+//    user.setIntro_l("不会打篮球的程序不是好男人!");
+//
+//    ValueOperations<String, Author> operations=redisTemplate.opsForValue();
+//    operations.set("502", user);
+//    Thread.sleep(500);
+//    boolean exists=redisTemplate.hasKey("502");
+//    if(exists){
+//      log.info(redisTemplate.opsForValue().get("502").toString());
+//    }else{
+//      log.info("exists is false");
+//    }
+//    // Assert.assertEquals("aa", operations.get("com.neo.f").getUserName());
+//  }
 }
